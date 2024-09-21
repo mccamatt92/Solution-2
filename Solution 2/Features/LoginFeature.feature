@@ -15,14 +15,14 @@ Scenario: Successful login with correct email
     Given I am on the Evernote login page
     When I log in with the following credentials:
 	|Email                        |Password          | 
-	| matthias.mccarthy@gmail.com |Fiestast2024      |
+	| UserName |EnterPassword      |
     Then I should be successfully logged in
 
 Scenario: Create a note, logout, and verify the note is available
     Given I am on the Evernote login page
 	When I log in with the following credentials:
 	|Email           |Password      | 
-	| random@mail.com|Wrong Password|
+	| UserName|EnterPassword|
 	Then I should be successfully logged in
     When I create a new note with the title "Test Note"
     Then I should see the note on my homepage with:
